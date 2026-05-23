@@ -1,0 +1,1386 @@
+ *,
+ *::before,
+ *::after {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+ }
+
+ :root {
+     --black: #0a0a0a;
+     --white: #f5f0e8;
+     --yellow: #FFE500;
+     --red: #FF2D00;
+     --blue: #0038FF;
+     --green: #00C94A;
+     --border: 3px solid #0a0a0a;
+     --shadow: 6px 6px 0px #0a0a0a;
+     --shadow-lg: 10px 10px 0px #0a0a0a;
+ }
+
+ html {
+     scroll-behavior: smooth;
+ }
+
+ body {
+     background-color: var(--white);
+     color: var(--black);
+     font-family: 'Space Grotesk', sans-serif;
+     overflow-x: hidden;
+ }
+
+ /* MARQUEE */
+ .marquee-bar {
+     background: var(--yellow);
+     border-top: var(--border);
+     border-bottom: var(--border);
+     padding: 10px 0;
+     overflow: hidden;
+     white-space: nowrap;
+ }
+
+ .marquee-track {
+     display: inline-block;
+     animation: marquee 18s linear infinite;
+ }
+
+ .marquee-track span {
+     font-family: 'Bebas Neue', sans-serif;
+     font-size: 22px;
+     letter-spacing: 2px;
+     margin: 0 30px;
+ }
+
+ @keyframes marquee {
+     0% {
+         transform: translateX(0);
+     }
+
+     100% {
+         transform: translateX(-50%);
+     }
+ }
+
+ /* NAV */
+ nav {
+     background: var(--white);
+     border-bottom: var(--border);
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 18px 40px;
+     position: sticky;
+     top: 0;
+     z-index: 100;
+ }
+
+ .nav-logo {
+     font-family: 'Bebas Neue', sans-serif;
+     font-size: 32px;
+     letter-spacing: 4px;
+     color: var(--black);
+     text-decoration: none;
+ }
+
+ .nav-logo span {
+     color: var(--red);
+ }
+
+ .nav-links {
+     display: flex;
+     gap: 32px;
+     list-style: none;
+ }
+
+ .nav-links a {
+     font-family: 'IBM Plex Mono', monospace;
+     font-size: 13px;
+     font-weight: 700;
+     text-decoration: none;
+     color: var(--black);
+     text-transform: uppercase;
+     letter-spacing: 1px;
+     transition: color 0.1s;
+ }
+
+ .nav-links a:hover {
+     color: var(--red);
+ }
+
+ .nav-cta {
+     background: var(--black);
+     color: var(--yellow) !important;
+     padding: 10px 22px;
+     border: var(--border);
+     box-shadow: var(--shadow);
+     transition: transform 0.1s, box-shadow 0.1s !important;
+ }
+
+ .nav-cta:hover {
+     transform: translate(3px, 3px) !important;
+     box-shadow: 3px 3px 0 var(--black) !important;
+     color: var(--yellow) !important;
+ }
+
+ /* HERO */
+ .hero {
+     min-height: 92vh;
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     border-bottom: var(--border);
+     position: relative;
+     overflow: hidden;
+ }
+
+ .hero-left {
+     padding: 60px 40px 60px 60px;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     border-right: var(--border);
+     position: relative;
+     z-index: 2;
+ }
+
+ .hero-tag {
+     display: inline-block;
+     background: var(--red);
+     color: var(--white);
+     font-family: 'IBM Plex Mono', monospace;
+     font-size: 12px;
+     font-weight: 700;
+     letter-spacing: 3px;
+     padding: 8px 16px;
+     border: var(--border);
+     margin-bottom: 28px;
+     width: fit-content;
+ }
+
+ .hero-title {
+     font-family: 'Bebas Neue', sans-serif;
+     font-size: clamp(80px, 10vw, 140px);
+     line-height: 0.9;
+     letter-spacing: -2px;
+     margin-bottom: 30px;
+ }
+
+ .hero-title .line2 {
+     color: var(--blue);
+     display: block;
+ }
+
+ .hero-title .line3 {
+     -webkit-text-stroke: 3px var(--black);
+     color: transparent;
+     display: block;
+ }
+
+ .hero-desc {
+     font-size: 17px;
+     line-height: 1.6;
+     max-width: 420px;
+     margin-bottom: 40px;
+     font-weight: 400;
+ }
+
+ .hero-btns {
+     display: flex;
+     gap: 16px;
+     flex-wrap: wrap;
+ }
+
+ .btn-primary {
+     background: var(--yellow);
+     color: var(--black);
+     font-family: 'IBM Plex Mono', monospace;
+     font-weight: 700;
+     font-size: 14px;
+     letter-spacing: 1px;
+     text-transform: uppercase;
+     padding: 16px 36px;
+     border: var(--border);
+     box-shadow: var(--shadow);
+     cursor: pointer;
+     text-decoration: none;
+     display: inline-block;
+     transition: transform 0.1s, box-shadow 0.1s;
+ }
+
+ .btn-primary:hover {
+     transform: translate(4px, 4px);
+     box-shadow: 2px 2px 0 var(--black);
+ }
+
+ .btn-secondary {
+     background: transparent;
+     color: var(--black);
+     font-family: 'IBM Plex Mono', monospace;
+     font-weight: 700;
+     font-size: 14px;
+     letter-spacing: 1px;
+     text-transform: uppercase;
+     padding: 16px 36px;
+     border: var(--border);
+     box-shadow: var(--shadow);
+     cursor: pointer;
+     text-decoration: none;
+     display: inline-block;
+     transition: transform 0.1s, box-shadow 0.1s;
+ }
+
+ .btn-secondary:hover {
+     transform: translate(4px, 4px);
+     box-shadow: 2px 2px 0 var(--black);
+ }
+
+ .hero-right {
+     background: var(--blue);
+     position: relative;
+     overflow: hidden;
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-end;
+     padding: 40px;
+ }
+
+ .hero-graphic {
+     position: absolute;
+     inset: 0;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .big-circle {
+     width: 420px;
+     height: 420px;
+     border-radius: 50%;
+     border: 4px solid var(--yellow);
+     position: absolute;
+     animation: spin 20s linear infinite;
+ }
+
+ .big-circle-inner {
+     width: 260px;
+     height: 260px;
+     border-radius: 50%;
+     background: var(--yellow);
+     border: 4px solid var(--black);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     position: relative;
+ }
+
+ .circle-text {
+     font-family: 'Bebas Neue', sans-serif;
+     font-size: 52px;
+     color: var(--black);
+     text-align: center;
+     line-height: 1;
+ }
+
+ @keyframes spin {
+     0% {
+         transform: rotate(0deg);
+     }
+
+     100% {
+         transform: rotate(360deg);
+     }
+ }
+
+ .hero-info-pills {
+     display: flex;
+     gap: 12px;
+     z-index: 2;
+     position: relative;
+     flex-wrap: wrap;
+ }
+
+ .pill {
+     background: var(--white);
+     border: var(--border);
+     padding: 10px 18px;
+     font-family: 'IBM Plex Mono', monospace;
+     font-size: 13px;
+     font-weight: 700;
+     letter-spacing: 0.5px;
+ }
+
+ .pill span {
+     color: var(--red);
+ }
+
+ /* STATS BAR */
+ .stats-bar {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     border-bottom: var(--border);
+ }
+
+ .stat-item {
+     padding: 40px 32px;
+     border-right: var(--border);
+     transition: background 0.15s;
+ }
+
+ .stat-item:last-child {
+     border-right: none;
+ }
+
+ .stat-item:hover {
+     background: var(--yellow);
+ }
+
+ .stat-num {
+     font-family: 'Bebas Neue', sans-serif;
+     font-size: 64px;
+     line-height: 1;
+     margin-bottom: 6px;
+ }
+
+ .stat-label {
+     font-family: 'IBM Plex Mono', monospace;
+     font-size: 12px;
+     font-weight: 700;
+     letter-spacing: 2px;
+     text-transform: uppercase;
+     color: #555;
+ }
+
+ /* LINEUP */
+ .section {
+     padding: 80px 60px;
+ }
+
+ .section-header {
+     display: flex;
+     align-items: flex-end;
+     justify-content: space-between;
+     margin-bottom: 50px;
+     flex-wrap: wrap;
+     gap: 20px;
+ }
+
+ .section-tag {
+     font-family: 'IBM Plex Mono', monospace;
+     font-size: 11px;
+     font-weight: 700;
+     letter-spacing: 4px;
+     text-transform: uppercase;
+     margin-bottom: 10px;
+     color: var(--red);
+ }
+
+ .section-title {
+     font-family: 'Bebas Neue', sans-serif;
+     font-size: 72px;
+     line-height: 1;
+     letter-spacing: 1px;
+ }
+
+ .lineup-grid {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     border: var(--border);
+     box-shadow: var(--shadow-lg);
+ }
+
+ .artist-card {
+     padding: 32px;
+     border-right: var(--border);
+     border-bottom: var(--border);
+     position: relative;
+     overflow: hidden;
+     cursor: pointer;
+     transition: background 0.15s;
+ }
+
+ .artist-card:nth-child(3n) {
+     border-right: none;
+ }
+
+ .artist-card:nth-last-child(-n+3) {
+     border-bottom: none;
+ }
+
+ .artist-card:hover {
+     background: var(--black);
+     color: var(--white);
+ }
+
+ .artist-card:hover .artist-day {
+     color: var(--yellow);
+ }
+
+ .artist-card:hover .artist-time {
+     color: #aaa;
+ }
+
+ .artist-num {
+     font-family: 'Bebas Neue', sans-serif;
+     font-size: 80px;
+     color: rgba(0, 0, 0, 0.06);
+     position: absolute;
+     top: -10px;
+     right: 20px;
+     line-height: 1;
+     pointer-events: none;
+     transition: color 0.15s;
+ }
+
+ .artist-card:hover .artist-num {
+     color: rgba(255, 255, 255, 0.07);
+ }
+
+ .artist-day {
+     font-family: 'IBM Plex Mono', monospace;
+     font-size: 11px;
+     font-weight: 700;
+     letter-spacing: 3px;
+     text-transform: uppercase;
+     color: var(--red);
+     margin-bottom: 12px;
+ }
+
+ .artist-name {
+     font-family: 'Bebas Neue', sans-serif;
+     font-size: 34px;
+     line-height: 1.1;
+     margin-bottom: 8px;
+ }
+
+ .artist-genre {
+     font-size: 13px;
+     margin-bottom: 14px;
+     opacity: 0.65;
+ }
+
+ .artist-time {
+     font-family: 'IBM Plex Mono', monospace;
+     font-size: 12px;
+     font-weight: 700;
+     letter-spacing: 1px;
+ }
+
+ .headliner-tag {
+     display: inline-block;
+     background: var(--yellow);
+     color: var(--black);
+     font-family: 'IBM Plex Mono', monospace;
+     font-size: 10px;
+     font-weight: 700;
+     letter-spacing: 2px;
+     padding: 4px 10px;
+     border: 2px solid var(--black);
+     margin-bottom: 12px;
+     text-transform: uppercase;
+ }
+
+ .artist-card:hover .headliner-tag {
+     background: var(--red);
+     color: var(--white);
+     border-color: var(--white);
+ }
+
+ /* SCHEDULE */
+ .schedule-section {
+     background: var(--black);
+     color: var(--white);
+     border-top: var(--border);
+     border-bottom: var(--border);
+     padding: 80px 60px;
+ }
+
+ .schedule-section .section-title {
+     color: var(--yellow);
+ }
+
+ .schedule-section .section-tag {
+     color: var(--green);
+ }
+
+ .day-tabs {
+     display: flex;
+     gap: 0;
+     margin-bottom: 40px;
+     border: 3px solid var(--white);
+     width: fit-content;
+     box-shadow: 6px 6px 0 var(--yellow);
+ }
+
+ .day-tab {
+     background: transparent;
+     color: var(--white);
+     font-family: 'IBM Plex Mono', monospace;
+     font-weight: 700;
+     font-size: 13px;
+     letter-spacing: 2px;
+     text-transform: uppercase;
+     padding: 14px 28px;
+     border: none;
+     cursor: pointer;
+     border-right: 2px solid var(--white);
+     transition: background 0.15s, color 0.15s;
+ }
+
+ .day-tab:last-child {
+     border-right: none;
+ }
+
+ .day-tab.active,
+ .day-tab:hover {
+     background: var(--yellow);
+     color: var(--black);
+ }
+
+ .schedule-list {
+     display: none;
+ }
+
+ .schedule-list.active {
+     display: block;
+ }
+
+ .sched-row {
+     display: grid;
+     grid-template-columns: 110px 1fr auto;
+     align-items: center;
+     padding: 22px 28px;
+     border: 2px solid rgba(255, 255, 255, 0.12);
+     margin-bottom: 10px;
+     transition: border-color 0.15s, background 0.15s;
+     cursor: pointer;
+     gap: 24px;
+ }
+
+ .sched-row:hover {
+     border-color: var(--yellow);
+     background: rgba(255, 229, 0, 0.05);
+ }
+
+ .sched-time {
+     font-family: 'IBM Plex Mono', monospace;
+     font-size: 13px;
+     font-weight: 700;
+     color: var(--yellow);
+     letter-spacing: 1px;
+ }
+
+ .sched-artist {
+     font-size: 18px;
+     font-weight: 700;
+ }
+
+ .sched-stage {
+     font-family: 'IBM Plex Mono', monospace;
+     font-size: 11px;
+     letter-spacing: 2px;
+     text-transform: uppercase;
+     color: #999;
+ }
+
+ .sched-badge {
+     display: inline-block;
+     padding: 5px 12px;
+     font-family: 'IBM Plex Mono', monospace;
+     font-size: 10px;
+     font-weight: 700;
+     letter-spacing: 1px;
+     text-transform: uppercase;
+ }
+
+ .badge-main {
+     background: var(--red);
+     color: var(--white);
+     border: 2px solid var(--red);
+ }
+
+ .badge-alt {
+     background: transparent;
+     color: var(--white);
+     border: 2px solid var(--white);
+ }
+
+ /* TICKET */
+ .ticket-section {
+     padding: 80px 60px;
+     background: var(--white);
+     border-bottom: var(--border);
+ }
+
+ .ticket-grid {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 0;
+     border: var(--border);
+     box-shadow: var(--shadow-lg);
+     margin-top: 50px;
+ }
+
+ .ticket-card {
+     padding: 40px 32px;
+     border-right: var(--border);
+     position: relative;
+     overflow: hidden;
+ }
+
+ .ticket-card:last-child {
+     border-right: none;
+ }
+
+ .ticket-card.featured {
+     background: var(--black);
+     color: var(--white);
+ }
+
+ .ticket-type {
+     font-family: 'IBM Plex Mono', monospace;
+     font-size: 11px;
+     font-weight: 700;
+     letter-spacing: 4px;
+     text-transform: uppercase;
+     color: var(--red);
+     margin-bottom: 14px;
+ }
+
+ .ticket-card.featured .ticket-type {
+     color: var(--yellow);
+ }
+
+ .ticket-name {
+     font-family: 'Bebas Neue', sans-serif;
+     font-size: 42px;
+     line-height: 1;
+     margin-bottom: 4px;
+ }
+
+ .ticket-price {
+     font-family: 'Bebas Neue', sans-serif;
+     font-size: 80px;
+     line-height: 1;
+     margin-bottom: 28px;
+ }
+
+ .ticket-price sup {
+     font-size: 30px;
+     vertical-align: top;
+     margin-top: 14px;
+     display: inline-block;
+ }
+
+ .ticket-price .period {
+     font-family: 'IBM Plex Mono', monospace;
+     font-size: 14px;
+     font-weight: 400;
+     vertical-align: bottom;
+     opacity: 0.6;
+ }
+
+ .ticket-features {
+     list-style: none;
+     margin-bottom: 36px;
+ }
+
+ .ticket-features li {
+     padding: 10px 0;
+     border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+     font-size: 14px;
+     display: flex;
+     align-items: center;
+     gap: 10px;
+ }
+
+ .ticket-card.featured .ticket-features li {
+     border-bottom-color: rgba(255, 255, 255, 0.15);
+ }
+
+ .ticket-features li::before {
+     content: '—';
+     font-family: 'IBM Plex Mono', monospace;
+     font-weight: 700;
+     color: var(--red);
+     flex-shrink: 0;
+ }
+
+ .ticket-card.featured .ticket-features li::before {
+     color: var(--yellow);
+ }
+
+ .btn-ticket {
+     width: 100%;
+     padding: 16px;
+     font-family: 'IBM Plex Mono', monospace;
+     font-weight: 700;
+     font-size: 13px;
+     letter-spacing: 2px;
+     text-transform: uppercase;
+     border: var(--border);
+     cursor: pointer;
+     box-shadow: var(--shadow);
+     transition: transform 0.1s, box-shadow 0.1s;
+ }
+
+ .btn-ticket:hover {
+     transform: translate(4px, 4px);
+     box-shadow: 2px 2px 0 var(--black);
+ }
+
+ .btn-ticket-dark {
+     background: var(--yellow);
+     color: var(--black);
+ }
+
+ .btn-ticket-light {
+     background: transparent;
+     color: var(--black);
+ }
+
+ .ticket-card.featured .btn-ticket {
+     background: var(--yellow);
+     color: var(--black);
+     border-color: var(--yellow);
+ }
+
+ .ticket-card.featured .btn-ticket:hover {
+     box-shadow: 2px 2px 0 var(--yellow);
+ }
+
+ .featured-badge {
+     position: absolute;
+     top: 0;
+     right: 0;
+     background: var(--red);
+     color: var(--white);
+     font-family: 'IBM Plex Mono', monospace;
+     font-size: 10px;
+     font-weight: 700;
+     letter-spacing: 2px;
+     padding: 8px 14px;
+     text-transform: uppercase;
+ }
+
+ /* MAP SECTION */
+ .venue-section {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     border-bottom: var(--border);
+     min-height: 500px;
+ }
+
+ .venue-info {
+     padding: 80px 60px;
+     border-right: var(--border);
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     gap: 28px;
+ }
+
+ .venue-address {
+     font-family: 'IBM Plex Mono', monospace;
+     font-size: 15px;
+     line-height: 1.7;
+ }
+
+ .venue-detail {
+     display: flex;
+     gap: 16px;
+     flex-wrap: wrap;
+ }
+
+ .venue-chip {
+     background: var(--black);
+     color: var(--yellow);
+     font-family: 'IBM Plex Mono', monospace;
+     font-size: 12px;
+     font-weight: 700;
+     letter-spacing: 1px;
+     padding: 10px 18px;
+     border: var(--border);
+ }
+
+ .venue-map {
+     background: var(--blue);
+     position: relative;
+     overflow: hidden;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .map-grid {
+     position: absolute;
+     inset: 0;
+     opacity: 0.2;
+     background-image:
+         linear-gradient(var(--white) 1px, transparent 1px),
+         linear-gradient(90deg, var(--white) 1px, transparent 1px);
+     background-size: 40px 40px;
+ }
+
+ .map-pin-text {
+     font-family: 'Bebas Neue', sans-serif;
+     font-size: 28px;
+     color: var(--white);
+     text-align: center;
+     line-height: 1.3;
+     z-index: 2;
+     position: relative;
+ }
+
+ .map-pin-dot {
+     width: 24px;
+     height: 24px;
+     border-radius: 50%;
+     background: var(--yellow);
+     border: 3px solid var(--black);
+     margin: 0 auto 12px;
+     animation: pulse 2s ease infinite;
+ }
+
+ @keyframes pulse {
+
+     0%,
+     100% {
+         transform: scale(1);
+     }
+
+     50% {
+         transform: scale(1.3);
+     }
+ }
+
+ /* FAQ */
+ .faq-section {
+     padding: 80px 60px;
+     border-bottom: var(--border);
+ }
+
+ .faq-list {
+     max-width: 800px;
+     margin-top: 50px;
+ }
+
+ .faq-item {
+     border: var(--border);
+     margin-bottom: -3px;
+     overflow: hidden;
+ }
+
+ .faq-q {
+     padding: 22px 28px;
+     font-size: 17px;
+     font-weight: 700;
+     cursor: pointer;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background: var(--white);
+     transition: background 0.15s;
+     user-select: none;
+ }
+
+ .faq-q:hover {
+     background: var(--yellow);
+ }
+
+ .faq-q .arrow {
+     font-family: 'IBM Plex Mono', monospace;
+     font-size: 20px;
+     font-weight: 700;
+     transition: transform 0.2s;
+     flex-shrink: 0;
+ }
+
+ .faq-item.open .faq-q {
+     background: var(--black);
+     color: var(--white);
+ }
+
+ .faq-item.open .arrow {
+     transform: rotate(45deg);
+ }
+
+ .faq-a {
+     display: none;
+     padding: 22px 28px;
+     background: var(--black);
+     color: var(--white);
+     font-size: 15px;
+     line-height: 1.7;
+     border-top: var(--border);
+ }
+
+ .faq-item.open .faq-a {
+     display: block;
+ }
+
+ /* FOOTER */
+ footer {
+     background: var(--black);
+     color: var(--white);
+     padding: 60px;
+     display: grid;
+     grid-template-columns: 2fr 1fr 1fr;
+     gap: 60px;
+     border-top: var(--border);
+ }
+
+ .footer-brand {
+     font-family: 'Bebas Neue', sans-serif;
+     font-size: 48px;
+     letter-spacing: 4px;
+     margin-bottom: 16px;
+ }
+
+ .footer-brand span {
+     color: var(--yellow);
+ }
+
+ .footer-desc {
+     font-size: 14px;
+     line-height: 1.7;
+     color: #aaa;
+ }
+
+ .footer-col-title {
+     font-family: 'IBM Plex Mono', monospace;
+     font-size: 11px;
+     font-weight: 700;
+     letter-spacing: 4px;
+     text-transform: uppercase;
+     color: var(--yellow);
+     margin-bottom: 20px;
+ }
+
+ .footer-links {
+     list-style: none;
+ }
+
+ .footer-links li {
+     margin-bottom: 12px;
+ }
+
+ .footer-links a {
+     color: #aaa;
+     text-decoration: none;
+     font-size: 14px;
+     transition: color 0.15s;
+ }
+
+ .footer-links a:hover {
+     color: var(--white);
+ }
+
+ .footer-bottom {
+     background: var(--black);
+     border-top: 2px solid rgba(255, 255, 255, 0.1);
+     padding: 20px 60px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+
+ .footer-bottom p {
+     font-family: 'IBM Plex Mono', monospace;
+     font-size: 11px;
+     letter-spacing: 1px;
+     color: #555;
+ }
+
+ .social-links {
+     display: flex;
+     gap: 16px;
+ }
+
+ .social-links a {
+     width: 36px;
+     height: 36px;
+     border: 2px solid rgba(255, 255, 255, 0.2);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: var(--white);
+     text-decoration: none;
+     font-family: 'IBM Plex Mono', monospace;
+     font-size: 11px;
+     font-weight: 700;
+     transition: background 0.15s, border-color 0.15s;
+ }
+
+ .social-links a:hover {
+     background: var(--yellow);
+     color: var(--black);
+     border-color: var(--yellow);
+ }
+
+
+
+ /* INDONESIA CONCERT PHOTO STRIP */
+ .indo-concert-intro {
+     border-bottom: var(--border);
+     background: var(--black);
+ }
+
+ .indo-concert-grid {
+     display: grid;
+     grid-template-columns: 1.4fr 0.9fr 0.9fr;
+     border-bottom: var(--border);
+ }
+
+ .indo-photo-card {
+     position: relative;
+     min-height: 420px;
+     overflow: hidden;
+     border-right: var(--border);
+ }
+
+ .indo-photo-card:last-child {
+     border-right: none;
+ }
+
+ .indo-photo-card img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     display: block;
+     filter: contrast(1.12) saturate(1.12);
+     transition: transform .35s ease;
+ }
+
+ .indo-photo-card:hover img {
+     transform: scale(1.06);
+ }
+
+ .indo-photo-label {
+     position: absolute;
+     left: 18px;
+     bottom: 18px;
+     background: var(--yellow);
+     color: var(--black);
+     border: var(--border);
+     padding: 10px 14px;
+     font-family: 'IBM Plex Mono', monospace;
+     font-size: 12px;
+     font-weight: 700;
+     letter-spacing: 1px;
+     text-transform: uppercase;
+     box-shadow: var(--shadow);
+ }
+
+ .indo-concert-caption {
+     display: flex;
+     justify-content: space-between;
+     gap: 18px;
+     align-items: center;
+     padding: 18px 40px;
+     background: var(--yellow);
+     color: var(--black);
+     font-family: 'IBM Plex Mono', monospace;
+     font-weight: 700;
+     letter-spacing: 1px;
+     text-transform: uppercase;
+ }
+
+ .indo-concert-caption span:last-child {
+     color: var(--red);
+ }
+
+ .experience-section {
+     padding: 80px 60px;
+     border-bottom: var(--border);
+     background: var(--yellow);
+ }
+
+ .experience-grid {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     border: var(--border);
+     box-shadow: var(--shadow-lg);
+     margin-top: 42px;
+     background: var(--white);
+ }
+
+ .experience-card {
+     padding: 34px 26px;
+     border-right: var(--border);
+ }
+
+ .experience-card:last-child {
+     border-right: none;
+ }
+
+ .experience-icon {
+     font-size: 34px;
+     margin-bottom: 16px;
+ }
+
+ .experience-title {
+     font-family: 'Bebas Neue', sans-serif;
+     font-size: 34px;
+     margin-bottom: 10px;
+ }
+
+ .experience-desc {
+     font-size: 14px;
+     line-height: 1.6;
+ }
+
+ .gallery-section {
+     padding: 80px 60px;
+     border-bottom: var(--border);
+     background: var(--white);
+ }
+
+ .gallery-grid {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     gap: 0;
+     border: var(--border);
+     box-shadow: var(--shadow-lg);
+     margin-top: 42px;
+ }
+
+ .gallery-item {
+     min-height: 260px;
+     border-right: var(--border);
+     border-bottom: var(--border);
+     overflow: hidden;
+     position: relative;
+ }
+
+ .gallery-item:nth-child(4n) {
+     border-right: none;
+ }
+
+ .gallery-item:nth-last-child(-n+4) {
+     border-bottom: none;
+ }
+
+ .gallery-item img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     display: block;
+     filter: grayscale(.1) contrast(1.1);
+     transition: transform .35s ease, filter .35s ease;
+ }
+
+ .gallery-item:hover img {
+     transform: scale(1.08);
+     filter: grayscale(0) contrast(1.2);
+ }
+
+ .gallery-tag {
+     position: absolute;
+     top: 14px;
+     left: 14px;
+     background: var(--black);
+     color: var(--yellow);
+     border: 2px solid var(--yellow);
+     padding: 7px 10px;
+     font-family: 'IBM Plex Mono', monospace;
+     font-size: 10px;
+     font-weight: 700;
+     letter-spacing: 1px;
+ }
+
+ .menu-toggle {
+     display: none;
+     font-size: 32px;
+     cursor: pointer;
+     font-weight: bold;
+ }
+
+
+ @media(max-width:900px) {
+
+     .menu-toggle {
+         display: block;
+     }
+
+     /* Navbar */
+     nav {
+         padding: 16px 24px;
+     }
+
+     .nav-links {
+         display: none;
+     }
+
+
+     /* Hero */
+     .hero {
+         grid-template-columns: 1fr;
+     }
+
+     .hero-left {
+         padding: 40px 24px;
+     }
+
+     .hero-right {
+         min-height: 340px;
+     }
+
+     .hero-title {
+         font-size: 72px;
+     }
+
+     .big-circle {
+         width: 280px;
+         height: 280px;
+     }
+
+     .big-circle-inner {
+         width: 180px;
+         height: 180px;
+     }
+
+     .circle-text {
+         font-size: 38px;
+     }
+
+
+     /* Section */
+     .section,
+     .schedule-section,
+     .ticket-section,
+     .faq-section,
+     .gallery-section,
+     .experience-section {
+         padding: 60px 24px;
+     }
+
+     .section-title {
+         font-size: 54px;
+     }
+
+
+     /* Stats */
+     .stats-bar {
+         grid-template-columns: repeat(2, 1fr);
+     }
+
+
+     /* Grid */
+     .lineup-grid,
+     .ticket-grid,
+     .venue-section,
+     .indo-concert-grid,
+     .experience-grid,
+     .gallery-grid {
+         grid-template-columns: 1fr;
+     }
+
+
+     /* Card */
+     .artist-card,
+     .ticket-card,
+     .experience-card,
+     .gallery-item,
+     .indo-photo-card {
+         border-right: none;
+     }
+
+     .ticket-card,
+     .experience-card {
+         border-bottom: var(--border);
+     }
+
+     .ticket-card:last-child,
+     .experience-card:last-child {
+         border-bottom: none;
+     }
+
+
+     /* Venue */
+     .venue-map {
+         min-height: 300px;
+     }
+
+     .venue-info {
+         padding: 40px 24px;
+     }
+
+
+     /* Schedule */
+     .sched-row {
+         grid-template-columns: 1fr;
+         gap: 8px;
+     }
+
+
+     /* Footer */
+     footer {
+         grid-template-columns: 1fr;
+         gap: 40px;
+         padding: 40px 24px;
+     }
+
+     .footer-bottom {
+         padding: 16px 24px;
+         flex-direction: column;
+         gap: 12px;
+         text-align: center;
+     }
+
+
+     /* Concert Intro */
+     .indo-concert-caption {
+         padding: 16px 24px;
+         flex-direction: column;
+         align-items: flex-start;
+     }
+
+
+     /* Button */
+     .btn-primary,
+     .btn-secondary {
+         width: 100%;
+         text-align: center;
+     }
+ }
+
+
+
+ /* HP kecil */
+ @media (max-width:500px) {
+
+     .hero-title {
+         font-size: 56px;
+     }
+
+     .hero-desc {
+         font-size: 15px;
+     }
+
+     .section-title {
+         font-size: 42px;
+     }
+
+     .ticket-price {
+         font-size: 56px;
+     }
+
+     .stats-bar {
+         grid-template-columns: 1fr;
+     }
+
+     .day-tabs {
+         width: 100%;
+     }
+
+     .day-tab {
+         flex: 1;
+         padding: 12px 8px;
+         font-size: 11px;
+     }
+
+     .pill {
+         width: 100%;
+         text-align: center;
+     }
+
+ }
